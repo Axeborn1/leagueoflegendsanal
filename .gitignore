@@ -1,2 +1,3 @@
 api.py
 *.pyc
+./__pycache__/*

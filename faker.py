@@ -14,7 +14,7 @@ class DiscordClient(discord.Client):
         if message.author == self.user:
             return
 
-        if message.content.startswith('$hello'):
+        if message.content.startswith('Faker!'):
             await message.channel.send('Hello World!')
 
 

@@ -3,6 +3,7 @@ import api
 
 lol_watcher = LolWatcher(api.riot_games)
 riot_watcher = RiotWatcher(api.riot_games)
+my_region = 'na1'
 
 class LeagueThing():
     def __init__(self, riot_id):
@@ -10,6 +11,7 @@ class LeagueThing():
         self.riot_id = riot_id.split('#')
         print(self.riot_id)
         self.account = riot_watcher.account.by_riot_id('AMERICAS', self.riot_id[0], self.riot_id[1])
+        self.summoner = lol_watcher.summoner.by_puuid(my_region, self.account['puuid'])
 
 
 #my_region = 'na1'

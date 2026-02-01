@@ -30,11 +30,13 @@ class DiscordClient(discord.Client):
             print(message.content[7:10])
             if message.content[7:10]=="add":
                 await message.channel.send("BAZINGA")
-                await self.get_user(message.content[11:])
+                await self.get_user(message.content[11:],message)
     
-    async def get_user(self,riot_id):
+    async def get_user(self,riot_id,og_message):
+        pass
 
-        return riot_id
+    async def send_message(self, channel, content):
+        await channel.send(content)
 
 
 

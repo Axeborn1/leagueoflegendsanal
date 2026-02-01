@@ -16,9 +16,10 @@ discord_client = faker.DiscordClient()
 league_trackers = {}
 
 @discord_client.event
-async def get_user(riot_id):
+async def get_user(riot_id,message):
     league_trackers[riot_id] = league.LeagueThing(riot_id)
     print(league_trackers)
+    #await discord_client.send_message(f"Hello {league_trackers[riot_id].}")
 
 
 discord_client.run(api.discord_token)
